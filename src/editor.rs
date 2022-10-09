@@ -33,9 +33,18 @@ impl Editor {
    
    if self.should_quit {
       println!("\n Goodbye. \r");
+   } else {
+      self.draw_rows();
+      print!("{}", termion::cursor::Goto(1,1))
    }
 
    io::stdout().flush()
+ }
+
+ fn draw_rows(&self) {
+   for _ in 0..24 {
+      println!("~\r");
+   }
  }
 
  fn process_keypress(&mut self) -> Result<(), std::io::Error> {
