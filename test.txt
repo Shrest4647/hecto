@@ -2,3 +2,8 @@ aaa
 äää
 y̆y̆y̆
 ❤❤❤
+\t \n
+\t tab \n new line
+t n new line
+		tab
+	new
