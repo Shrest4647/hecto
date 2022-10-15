@@ -2,6 +2,7 @@ use std::io::{self, Write};
 use termion::event::Key;
 use termion::input::TermRead;
 use termion::raw::{IntoRawMode, RawTerminal};
+use termion::color;
 use crate::Position;
 
 pub struct Size {
@@ -20,7 +21,7 @@ impl Terminal {
         Ok(Self {
             size: Size {
                 width: size.0,
-                height: size.1,
+                height: size.1.saturating_sub(2),
             },
             _stdout: io::stdout().into_raw_mode()?,
         })

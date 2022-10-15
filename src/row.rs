@@ -33,7 +33,7 @@ impl Row {
             if grapheme == "\t" {
                 result.push_str(" ");
             } else {
-                result.push_str(grapheme)
+                result.push_str(grapheme);
             }
         }
         result
